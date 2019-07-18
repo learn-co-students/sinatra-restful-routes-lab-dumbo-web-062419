@@ -1,0 +1,21 @@
+<a href="/recipes">
+  See All Recipes
+</a>
+
+<h1>This is the show page.</h1>
+<h2> <%= @recipe.name %> </h2>
+<h6> <%= @recipe.ingredients %> </h6>
+<h6><%= @recipe.cook_time %></h6>
+
+
+<p>
+  Edit:
+  <a href="/recipes/<%= @recipe.id %>/edit">
+    <%= @recipe.name %>
+  </a>
+</p>
+
+<form action="/recipes/<%= @recipe.id %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="delete">
+</form>
